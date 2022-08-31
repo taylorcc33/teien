@@ -1,5 +1,10 @@
-!#/usr/bin/env ruby
+#!/usr/bin/env ruby
 
 require 'pry'
 
-binding.pry
+directories = %w(html markdown templates)
+
+directories.each do |dir|
+  Dir.mkdir("#{Dir.pwd}/#{dir}") unless Dir.exists?("#{Dir.pwd}/#{dir}")
+end
+
