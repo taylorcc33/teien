@@ -1,6 +1,7 @@
 #!/usr/bin/env ruby
 
 require 'pry'
+require 'redcarpet'
 
 directories = %w(html markdown templates)
 
