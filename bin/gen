@@ -3,6 +3,7 @@
 
 require 'pry'
 require 'front_matter_parser'
+require 'redcarpet'
 require_relative "../lib/teien"
 
 app = Teien.new

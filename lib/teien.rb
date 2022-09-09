@@ -1,12 +1,16 @@
 class Teien
   # ✅ get path to markdown directory
-  # ✅ load markdown files from directory
-  #  
-
+  # ✅ load markdown file from directory
+  # parse frontmatter from file 
 
   def gen
     files = markdown_files
-    front_matter = parse_frontmatter(files)
+    parsed = parse(files)
+    meta_data = parsed.front_matter
+    body = parsed.content
+
+    p parse_body(body)
+
   end
 
   def markdown_files
@@ -20,8 +24,14 @@ class Teien
     path = 'markdown' if Dir.exist?('markdown')
   end
 
-  def parse_frontmatter(file)
-    parsed = FrontMatterParser::Parser.parse_file(file[0])   
+  def parse(file)
+    parsed = FrontMatterParser::Parser.parse_file("#{markdown_path}/#{file[0]}")   
+  end
+
+  def parse_body(content)
+    renderer = Redcarpet::Render::HTML.new
+    markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+    markdown.render(content) 
   end
 end
 
