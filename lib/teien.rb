@@ -5,7 +5,8 @@ class Teien
 
 
   def gen
-    markdown_files
+    files = markdown_files
+    front_matter = parse_frontmatter(files)
   end
 
   def markdown_files
@@ -17,6 +18,10 @@ class Teien
 
   def markdown_path
     path = 'markdown' if Dir.exist?('markdown')
+  end
+
+  def parse_frontmatter(file)
+    parsed = FrontMatterParser::Parser.parse_file(file[0])   
   end
 end
 

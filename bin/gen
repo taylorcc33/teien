@@ -2,6 +2,7 @@
 # frozen_string_literal: true
 
 require 'pry'
+require 'front_matter_parser'
 require_relative "../lib/teien"
 
 app = Teien.new
