@@ -37,4 +37,3 @@ markdown = Redcarpet::Markdown.new(renderer, extensions = {})
 
 p markdown.render('This is *bongos*, indeed.')
 
-p 'hello there you'
