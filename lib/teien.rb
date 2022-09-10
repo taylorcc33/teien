@@ -4,15 +4,18 @@
 class Teien
   # ✅ get path to markdown directory
   # ✅ load markdown file from directory
-  # parse frontmatter from file
+  # ✅ parse frontmatter from file
+  # ✅ parse html body from file
+  # add html to teemplate in dist folder
+  # loop to be handle multiple .md files
 
   def gen
     files = markdown_files
     parsed = parse(files)
-    meta_data = parsed.front_matter
-    body = parsed.content
 
-    p parse_body(body)
+    meta_data = parsed.front_matter
+
+    html_body = parse_body(parsed.content)
   end
 
   def markdown_files
