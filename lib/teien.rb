@@ -6,7 +6,13 @@ class Teien
   # ✅ load markdown file from directory
   # ✅ parse frontmatter from file
   # ✅ parse html body from file
-  # add html to teemplate in dist folder
+  # add html to template in dist folder
+  # - get html template
+  # - sub out content tag with parsed html content.
+  #
+  #
+  #
+  #
   # loop to be handle multiple .md files
 
   def gen
