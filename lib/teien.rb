@@ -1,7 +1,10 @@
+# frozen_string_literal: true
+
+# top level documentation comment
 class Teien
   # ✅ get path to markdown directory
   # ✅ load markdown file from directory
-  # parse frontmatter from file 
+  # parse frontmatter from file
 
   def gen
     files = markdown_files
@@ -10,13 +13,12 @@ class Teien
     body = parsed.content
 
     p parse_body(body)
-
   end
 
   def markdown_files
     files = Dir.entries(markdown_path)
-    files.delete(".")
-    files.delete("..")
+    files.delete('.')
+    files.delete('..')
     files
   end
 
@@ -25,13 +27,12 @@ class Teien
   end
 
   def parse(file)
-    parsed = FrontMatterParser::Parser.parse_file("#{markdown_path}/#{file[0]}")   
+    parsed = FrontMatterParser::Parser.parse_file("#{markdown_path}/#{file[0]}")
   end
 
   def parse_body(content)
     renderer = Redcarpet::Render::HTML.new
     markdown = Redcarpet::Markdown.new(renderer, extensions = {})
-    markdown.render(content) 
+    markdown.render(content)
   end
 end
-
