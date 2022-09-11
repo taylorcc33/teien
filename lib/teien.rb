@@ -17,11 +17,16 @@ class Teien
 
   def gen
     files = markdown_files
-    parsed = parse(files)
+    parsed_files = []
 
-    meta_data = parsed.front_matter
+    files.each do |file|
+      parsed = parse(file)
+      parsed_files << parsed
+    end
+    binding.pry
+    # meta_data = parsed.front_matter
 
-    html_body = parse_body(parsed.content)
+    # html_body = parse_body(parsed.content)
   end
 
   def markdown_files
@@ -36,7 +41,7 @@ class Teien
   end
 
   def parse(file)
-    parsed = FrontMatterParser::Parser.parse_file("#{markdown_path}/#{file[0]}")
+    parsed = FrontMatterParser::Parser.parse_file("#{markdown_path}/#{file}")
   end
 
   def parse_body(content)
