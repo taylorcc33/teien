@@ -4,6 +4,8 @@
 require 'pry'
 require 'front_matter_parser'
 require 'redcarpet'
-require_relative '../lib/teien'
 
-generate_html_files
+$LOAD_PATH.unshift("#{__dir__}/../lib")
+require 'teien'
+
+Teien::Generator.generate_html_files

@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
-require_relative 'teien'
-
+require_relative 'teien/generator'
 # top level documentation comment
 module Teien
   # ✅ get path to markdown directory
