@@ -1,21 +1,23 @@
 # frozen_string_literal: true
 
+require_relative 'teien'
+
 # top level documentation comment
-class Teien
+module Teien
   # ✅ get path to markdown directory
   # ✅ load markdown file from directory
   # ✅ parse frontmatter from file
   # ✅ parse html body from file
-  # add html to template in dist folder
-  # - get html template
-  # - sub out content tag with parsed html content.
+  # -  add html to template in dist folder
+  # -  get html template
+  # -  sub out content tag with parsed html content.
   #
   #
   #
   #
   # loop to be handle multiple .md files
 
-  def gen
+  def generate_html_files
     files = markdown_files
     parsed_files = []
 
@@ -23,6 +25,7 @@ class Teien
       parsed = parse(file)
       parsed_files << parsed
     end
+
     binding.pry
     # meta_data = parsed.front_matter
 
@@ -48,5 +51,9 @@ class Teien
     renderer = Redcarpet::Render::HTML.new
     markdown = Redcarpet::Markdown.new(renderer, extensions = {})
     markdown.render(content)
+  end
+
+  def html_template
+    template = File.read("templates/basic_temp.html")
   end
 end
