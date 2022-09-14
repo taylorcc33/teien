@@ -7,8 +7,8 @@ module Teien
 
     end
 
-    def self.generate_html_files
-      puts "hello" 
+    def generate_html_files
+      puts "generating files"
     end
   end
 end

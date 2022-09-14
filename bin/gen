@@ -8,4 +8,6 @@ require 'redcarpet'
 $LOAD_PATH.unshift("#{__dir__}/../lib")
 require 'teien'
 
-Teien::Generator.generate_html_files
+# Teien::Generator.generate_html_files
+
+Teien::App.update

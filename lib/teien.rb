@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require_relative 'teien/parser'
+require_relative 'teien/app'
 require_relative 'teien/generator'
 # top level documentation comment
 module Teien
@@ -25,7 +27,6 @@ module Teien
       parsed_files << parsed
     end
 
-    binding.pry
     # meta_data = parsed.front_matter
 
     # html_body = parse_body(parsed.content)
