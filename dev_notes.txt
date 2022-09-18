@@ -1,0 +1,3 @@
+Wanting to move logic from teien.rb to the relevant classes, generator.rb and parser.rb
+
+
