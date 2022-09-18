@@ -2,7 +2,7 @@
 
 module Teien
   class Parser
-    attr_reader :parsed_files
+    attr_reader :files, :parsed_files
    
     def initialize
       @files = markdown_files
@@ -30,6 +30,8 @@ module Teien
         parsed = parse_markdown_file(file)
         parsed_files << parsed
       end
+
+      parsed_files
     end
 
     

@@ -1,12 +1,12 @@
- frozen_string_literal: true
+ # frozen_string_literal: true
 
 module Teien
   class App
     def self.update
-      generator = Generator.new
       parser = Parser.new
+      generator = Generator.new
 
-      generator.generate_html_files
+      parsed_files = parser.parse_files(parser.files)
     end
   end
 end
