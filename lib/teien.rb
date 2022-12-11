@@ -1,7 +1,5 @@
 # frozen_string_literal: true
 
-binding.pry
-
 require_relative 'teien/parser'
 require_relative 'teien/app'
 require_relative 'teien/generator'

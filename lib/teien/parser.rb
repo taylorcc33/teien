@@ -10,7 +10,6 @@ module Teien
   # Access @content and @front_matter with . methods -> parsed_files[0].content
 
   class Parser
-    binding.pry
     attr_accessor :files, :parsed_files
    
     def initialize
