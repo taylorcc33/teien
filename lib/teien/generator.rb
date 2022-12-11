@@ -12,9 +12,13 @@ module Teien
 
     # takes html strings as content and frontmatter
     def generate_html_files(files)
-      files.each do |file|
+      html_files = files.map do |file|
         new_html = html_template.gsub(/<!-- CONTENT -->/, file[:content])
         new_html = new_html.gsub(/<!-- TITLE -->/, file[:front_matter]["title"])
+
+        file_name = file[:front_matter]["title"].downcase.split(" ").join("-")
+
+        File.open("dist/#{file_name}.html", 'w') { |f| f.write new_html }
       end
     end
   end   
@@ -24,6 +28,6 @@ end
 
 # Load html_template in initializer - DONE!
 # Map over files - DONE!
-# Insert content into html_template body
-# Insert frontmatter into relevant header fields
+# Insert content into html_template body - DONE!
+# Insert frontmatter into relevant header fields - DONE!
 # Save html file into relevant dist directory
