@@ -20,7 +20,7 @@ module Teien
       interpreter.interpret_files(parsed_files)
     end
 
-    # pareses markdown files into content and frontmatter strings
+    # parses markdown files into content and frontmatter strings
     def parsed_files
       parser.parse_files(parser.files)
     end
