@@ -4,7 +4,3 @@ require_relative 'teien/parser'
 require_relative 'teien/app'
 require_relative 'teien/generator'
 require_relative 'teien/interpreter'
-# top level documentation comment
-module Teien
-
-end
