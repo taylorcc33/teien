@@ -1,8 +1,11 @@
 # frozen_string_literal: true
 
+binding.pry
+
 require_relative 'teien/parser'
 require_relative 'teien/app'
 require_relative 'teien/generator'
+require_relative 'teien/interpreter'
 # top level documentation comment
 module Teien
   # ✅ get path to markdown directory
@@ -18,6 +21,7 @@ module Teien
   #
   # loop to be handle multiple .md files
 
+  # in Parser
   def generate_html_files
     files = markdown_files
     parsed_files = []
@@ -32,6 +36,7 @@ module Teien
     # html_body = parse_body(parsed.content)
   end
 
+  # in Parser
   def markdown_files
     files = Dir.entries(markdown_path)
     files.delete('.')
@@ -39,10 +44,12 @@ module Teien
     files
   end
 
+  # in Parser
   def markdown_path
     path = 'markdown' if Dir.exist?('markdown')
   end
 
+  # in Parser
   def parse(file)
     parsed = FrontMatterParser::Parser.parse_file("#{markdown_path}/#{file}")
   end

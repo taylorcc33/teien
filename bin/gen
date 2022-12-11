@@ -1,6 +1,8 @@
 #!/usr/bin/env ruby
 # frozen_string_literal: true
 
+# Generates html files from markdown
+
 require 'pry'
 require 'front_matter_parser'
 require 'redcarpet'
@@ -10,4 +12,6 @@ require 'teien'
 
 # Teien::Generator.generate_html_files
 
-Teien::App.update
+app = Teien::App.new
+
+app.update
