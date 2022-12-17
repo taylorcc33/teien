@@ -8,6 +8,7 @@ module Teien
       @parser = Parser.new
       @generator = Generator.new
       @interpreter = Interpreter.new
+
     end
 
     def update

@@ -12,6 +12,6 @@ require 'teien'
 
 # Teien::Generator.generate_html_files
 
-app = Teien::App.new
+app = ::Teien::App.new
 
 app.update
