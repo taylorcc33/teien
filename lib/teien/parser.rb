@@ -13,7 +13,7 @@ module Teien
     attr_accessor :files, :parsed_files
    
     def initialize
-      @files = markdown_files
+      # @files = markdown_files
     end
    
     def parse_files(files)
@@ -33,13 +33,13 @@ module Teien
       path = 'markdown' if Dir.exist?('markdown')
     end
 
-    def markdown_files
-      files = Dir.children(markdown_path)
-      # files
-    end
+    # def markdown_files
+    #   files = Dir.children(markdown_path)
+    #   # files
+    # end
 
     def parse_markdown_file(file)
-      parsed = FrontMatterParser::Parser.parse_file("#{markdown_path}/#{file}")
+      FrontMatterParser::Parser.parse_file("#{markdown_path}/#{file}")
     end
 
     def formatted_parsed_files(files)

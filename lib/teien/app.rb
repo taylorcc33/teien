@@ -2,12 +2,13 @@
 
 module Teien
   class App
-    attr_reader :parser, :interpreter, :generator
+    attr_reader :parser, :interpreter, :generator, :markdown_files
     
     def initialize
       @parser = Parser.new
       @generator = Generator.new
       @interpreter = Interpreter.new
+      @markdown_files = Dir.children(markdown_path)
 
     end
 
@@ -23,7 +24,12 @@ module Teien
 
     # parses markdown files into content and frontmatter strings
     def parsed_files
-      parser.parse_files(parser.files)
+      binding.pry
+      parser.parse_files(markdown_files)
+    end
+
+    def markdown_path
+      path = 'markdown' if Dir.exist?('markdown')
     end
   end
 end
