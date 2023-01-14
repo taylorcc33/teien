@@ -4,10 +4,10 @@ module Teien
   class App
     attr_reader :parser, :interpreter, :generator, :markdown_files
     
-    def initialize
-      @parser = Parser.new
-      @generator = Generator.new
-      @interpreter = Interpreter.new
+    def initialize(parser = Parser.new, generator = Generator.new, interpreter = Interpreter.new)
+      @parser = parser
+      @generator = generator
+      @interpreter = interpreter
       @markdown_files = Dir.children(markdown_path)
 
     end
