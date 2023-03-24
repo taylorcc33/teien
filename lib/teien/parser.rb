@@ -11,11 +11,11 @@ module Teien
 
   class Parser
     attr_accessor :files, :parsed_files
-   
+
     def initialize
       # @files = markdown_files
     end
-   
+
     def parse_files(files)
       parsed_files = []
 
