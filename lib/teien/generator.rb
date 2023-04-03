@@ -12,6 +12,8 @@ module Teien
 
     # takes html strings as content and frontmatter
     def generate_html_files(files)
+      delete_html_files
+      
       html_files = files.map do |file|
         new_html = html_template.gsub(/<!-- CONTENT -->/, file[:content])
         new_html = new_html.gsub(/<!-- TITLE -->/, file[:front_matter]["title"])
@@ -19,6 +21,12 @@ module Teien
         file_name = file[:front_matter]["title"].downcase.split(" ").join("-")
 
         File.open("dist/#{file_name}.html", 'w') { |f| f.write new_html }
+      end
+    end
+
+    def delete_html_files
+      Dir["dist/*.html"].each do |file|
+        File.delete(file)
       end
     end
   end   

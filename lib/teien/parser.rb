@@ -53,7 +53,6 @@ module Teien
 
         formatted_files << file_object
       end
-      binding.pry
       formatted_files
     end
   end

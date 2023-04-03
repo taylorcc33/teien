@@ -24,7 +24,6 @@ module Teien
 
     # parses markdown files into content and frontmatter strings
     def parsed_files
-      binding.pry
       parser.parse_files(markdown_files)
     end
 

@@ -11,7 +11,7 @@ module Teien
     attr_reader :files, :renderer, :markdown
 
     def initialize
-      @renderer = Redcarpet::Render::HTML.new(no_links: true, hard_wrap: true)
+      @renderer = Redcarpet::Render::HTML.new(no_links: false, hard_wrap: true)
       @markdown = Redcarpet::Markdown.new(renderer, extensions = {})
     end
 
