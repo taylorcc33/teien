@@ -1,6 +1,6 @@
 ---
 title: About Me
-file_name: about-me
+nav_location: navbar[:music][1]
 author: Taylor Collins
 date: 09-10-2022
 ---

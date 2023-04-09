@@ -18,6 +18,7 @@ module Teien
 
   private
 
+    # interprets parsed files into html strings
     def interpreted_files
       interpreter.interpret_files(parsed_files)
     end

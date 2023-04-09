@@ -1,5 +1,4 @@
 require 'rack'
-require 'pry'
 
 use Rack::Reloader, 0
 # user Rack::Static, :urls => ["/dist"], :root => "dist"
