@@ -43,7 +43,7 @@ module Teien
       html_files = files.map do |file|
         new_html = html_template.gsub(/<!-- CONTENT -->/, file[:content])
         new_html = new_html.gsub(/<!-- TITLE -->/, file[:front_matter]['title'])
-        new_html = new_html.gsub(/<!-- NAV -->/, generate_navbar)
+        # new_html = new_html.gsub(/<!-- NAV -->/, generate_navbar)
 
         file_name = file[:front_matter]['title'].downcase.split(' ').join('-')
 
@@ -61,7 +61,7 @@ module Teien
       end
     end
 
-    # TODO: generate dynamic navbar like XXIIVV site nav
+    # TODO: generate dynamic navbar like 100r site nav
     def generate_navbar
       navbar = <<-HEREDOC
       <summary>Menu</summary>

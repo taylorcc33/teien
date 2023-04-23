@@ -5,7 +5,7 @@ author: Taylor Collins
 date: 09-04-2022
 ---
 
-# This is the index page
+# This is the index page yo!
 
 ## This is an h2
 
