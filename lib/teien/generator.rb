@@ -41,7 +41,6 @@ module Teien
       delete_html_files
 
       html_files = files.map do |file|
-        binding.pry
         new_html = html_template.gsub(/<!-- CONTENT -->/, file[:content])
         new_html = new_html.gsub(/<!-- TITLE -->/, file[:front_matter]['title'])
         new_html = new_html.gsub(/<!-- NAV -->/, generate_navbar)
