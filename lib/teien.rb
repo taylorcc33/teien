@@ -11,3 +11,5 @@ require_relative 'teien/interpreter'
 # comment from test2
 
 # comment from test3
+
+# comment from test4
