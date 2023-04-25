@@ -17,3 +17,7 @@ require_relative 'teien/interpreter'
 def hello_world
   puts "hello world!"
 end
+
+def hello_universe
+  puts "hello_universe"
+end
