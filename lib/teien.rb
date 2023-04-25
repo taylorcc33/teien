@@ -13,3 +13,7 @@ require_relative 'teien/interpreter'
 # comment from test3
 
 # comment from test4
+
+def hello_world
+  puts "hello world!"
+end
