@@ -45,7 +45,11 @@ module Teien
         new_html = new_html.gsub(/<!-- TITLE -->/, file[:front_matter]['title'])
         # new_html = new_html.gsub(/<!-- NAV -->/, generate_navbar)
 
-        file_name = file[:front_matter]['title'].downcase.split(' ').join('-')
+        if file[:front_matter]['file_name']
+          file_name = file[:front_matter]['file_name']
+        else
+          file_name = file[:front_matter]['title'].downcase.split(' ').join('-')
+        end
 
         nav_location ||= file[:front_matter]['nav_location']
 

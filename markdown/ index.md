@@ -1,5 +1,6 @@
 ---
-title: Index
+file_name: index
+title: tayco.dev
 nav_location: navbar[:music][0]
 author: Taylor Collins
 date: 09-04-2022
