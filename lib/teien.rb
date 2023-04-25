@@ -9,3 +9,5 @@ require_relative 'teien/interpreter'
 # comment from test1
 
 # comment from test2
+
+# comment from test3
