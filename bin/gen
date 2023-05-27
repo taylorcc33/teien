@@ -4,6 +4,7 @@
 # Generates html files from markdown
 
 require 'pry'
+require 'byebug'
 require 'front_matter_parser'
 require 'redcarpet'
 

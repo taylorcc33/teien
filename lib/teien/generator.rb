@@ -74,6 +74,8 @@ module Teien
 
     def create_navbar_list(files)
       files.map do |file|
+        next if file[:front_matter]['nav_location'] == ""
+
         nav_item = file[:front_matter]['title']
         
         if file[:front_matter]['file_name']
