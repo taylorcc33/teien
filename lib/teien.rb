@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'rack'
 
 require_relative 'teien/parser'
@@ -15,5 +16,5 @@ require_relative 'teien/interpreter'
 # comment from test4
 
 def hello_world
-  puts "hello world!"
+  puts 'hello world!'
 end

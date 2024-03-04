@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'spec_helper'
 require 'front_matter_parser'
 
@@ -11,7 +13,9 @@ describe ::Teien::Parser do
     before do
       allow(FrontMatterParser::Parser).to receive(:parse_file).with("markdown/#{file_names[0]}").and_return(frontmatter_object)
       allow(FrontMatterParser::Parser).to receive(:parse_file).with("markdown/#{file_names[1]}").and_return(frontmatter_object)
-      allow(parser).to receive(:formatted_parsed_files).with([frontmatter_object, frontmatter_object]).and_return([frontmatter_object, frontmatter_object])
+      allow(parser).to receive(:formatted_parsed_files).with([frontmatter_object,
+                                                              frontmatter_object]).and_return([frontmatter_object,
+                                                                                               frontmatter_object])
     end
 
     it 'returns an array of formatted files' do
@@ -21,7 +25,6 @@ describe ::Teien::Parser do
     end
   end
 end
-
 
 # Move some stuff from parser to app -
 #   files ✅

@@ -10,7 +10,7 @@ module Teien
     def initialize
       @html_template = File.read('templates/basic_temp.html')
 
-      @navbar_list = ""
+      @navbar_list = ''
 
       # @navbar = {
       #   "dev": {
@@ -36,7 +36,7 @@ module Teien
       #     "inventory": {},
       #     "personal": {},
       #   },
-      # } 
+      # }
     end
 
     # takes html strings as content and frontmatter
@@ -51,19 +51,15 @@ module Teien
         new_html = html_template.gsub(/<!-- CONTENT -->/, file[:content])
         new_html = new_html.gsub(/<!-- TITLE -->/, file[:front_matter]['title'])
         new_html = new_html.gsub(/<!-- NAV -->/, generate_navbar(navbar_list))
-        file_name = ""
+        file_name = ''
 
-        if file[:front_matter]['file_name']
-          file_name = file[:front_matter]['file_name']
-        else
-          file_name = file[:front_matter]['title'].downcase.split(' ').join('-')
-        end
+        file_name = file[:front_matter]['file_name'] || file[:front_matter]['title'].downcase.split(' ').join('-')
 
         File.open("dist/#{file_name}.html", 'w') { |f| f.write new_html }
       end
     end
 
-    private   
+    private
 
     # Clears out old html files before generating new ones
     def delete_html_files
@@ -74,15 +70,11 @@ module Teien
 
     def create_navbar_list(files)
       files.map do |file|
-        next if file[:front_matter]['nav_location'] == ""
+        next if file[:front_matter]['nav_location'] == ''
 
         nav_item = file[:front_matter]['title']
-        
-        if file[:front_matter]['file_name']
-          nav_link = file[:front_matter]['file_name']
-        else
-          nav_link = file[:front_matter]['title'].downcase.split(' ').join('-')
-        end
+
+        nav_link = file[:front_matter]['file_name'] || file[:front_matter]['title'].downcase.split(' ').join('-')
 
         navbar_list << "<li><a href=\"#{nav_link}.html\">#{nav_item}</a></li>"
       end
@@ -100,7 +92,6 @@ module Teien
         </section>
       </section>
       HEREDOC
-    
     end
   end
 end

@@ -15,7 +15,7 @@ extraneous to my wants.
 ## Installation
 
 - Run `bundle install` to install necessary gems.
-- Run `./bin/setup` to generate an html template
+- Run `./bin/setup` to generate the html template
 
 ## Usage
 

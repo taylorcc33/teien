@@ -27,7 +27,7 @@ module Teien
       formatted_parsed_files(parsed_files)
     end
 
-  private
+    private
 
     def markdown_path
       path = 'markdown' if Dir.exist?('markdown')

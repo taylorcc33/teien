@@ -37,6 +37,6 @@ HEREDOC
 File.open('templates/basic_temp.html', 'w') { |f| f.write html_template }
 
 renderer = Redcarpet::Render::HTML.new(no_links: true, hard_wrap: true)
-markdown = Redcarpet::Markdown.new(renderer, extensions = {})
+markdown = Redcarpet::Markdown.new(renderer)
 
 p markdown.render('This is *bongos*, indeed.')
