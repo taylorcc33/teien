@@ -14,6 +14,7 @@ directories.each do |dir|
   Dir.mkdir("#{Dir.pwd}/#{dir}") unless Dir.exist?("#{Dir.pwd}/#{dir}")
 end
 
+# Base html template
 html_template = <<~HEREDOC
   <!DOCTYPE html>
   <html lang="en">

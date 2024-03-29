@@ -8,7 +8,7 @@ in nature. They are spaces created for meditation and solace.
 
 This piece of software is meant to be a small digital haven of sorts,
 specifically designed to suit my personal needs and whims. It is a static site
-generator to craft a personal wiki of sorts. However, it could be modified and
+generator to craft a personal wiki of sorts. However, it could be modified
 in any number of ways to contain numerous additional features that are simply
 extraneous to my wants.
 
