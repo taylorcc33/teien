@@ -30,7 +30,7 @@ module Teien
     private
 
     def markdown_path
-      path = 'markdown' if Dir.exist?('markdown')
+      'markdown' if Dir.exist?('markdown')
     end
 
     # def markdown_files

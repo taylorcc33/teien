@@ -2,7 +2,6 @@
 
 module Teien
   # Generates the html files in the dist folder after the parsed markdown is interpreted into html.
-
   class Generator
     attr_reader :html_template, :navbar
     attr_accessor :navbar_list
@@ -40,28 +39,29 @@ module Teien
     end
 
     # takes html strings as content and frontmatter
+    # rubocop:disable Metrics/AbcSize
     def generate_html_files(files)
+      # Clear out old html files before generating new ones
       delete_html_files
 
       # Loop over files and add navbar list items to navbar_list
       create_navbar_list(files)
 
       # Loop over files and generate html files from file[:content] and navbar_list
-      html_files = files.map do |file|
+      files.map do |file|
         new_html = html_template.gsub(/<!-- CONTENT -->/, file[:content])
         new_html = new_html.gsub(/<!-- TITLE -->/, file[:front_matter]['title'])
         new_html = new_html.gsub(/<!-- NAV -->/, generate_navbar(navbar_list))
-        file_name = ''
 
         file_name = file[:front_matter]['file_name'] || file[:front_matter]['title'].downcase.split(' ').join('-')
 
         File.open("dist/#{file_name}.html", 'w') { |f| f.write new_html }
       end
     end
+    # rubocop:enable Metrics/AbcSize
 
     private
 
-    # Clears out old html files before generating new ones
     def delete_html_files
       Dir['dist/*.html'].each do |file|
         File.delete(file)
@@ -82,7 +82,7 @@ module Teien
 
     # TODO: generate dynamic navbar like 100r site nav
     def generate_navbar(navbar_list)
-      navbar = <<-HEREDOC
+      <<-HEREDOC
       <summary>Menu</summary>
       <section class="site-nav">
         <section>
